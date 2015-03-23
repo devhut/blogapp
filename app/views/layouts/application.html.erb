@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlogApp</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+<p><%= @time %></p>
+
+<h1>Before yield</h1>
+
+<% if !flash[:notice].blank? %>
+<h1><%= flash[:notice] %></h1>
+<% end %>
+
+<%= yield %>
+
+<h1>After yield</h1>
+
+</body>
+</html>

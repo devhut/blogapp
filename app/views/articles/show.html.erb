@@ -1,0 +1,47 @@
+<h1>Show</h1>
+
+<p>
+	<%= link_to("Index", articles_path) %> |
+	<%= link_to("Edit", edit_article_path) %> |
+	<%= link_to("Delete", @article, :method => :delete, :data => {:confirm => "Are you sure?"}) %>
+</p>
+
+<hr>
+
+<p><strong>Author:</strong></p>
+
+<p><%= @article.author %></p>
+
+<p><strong>Title:</strong></p>
+
+<p><%= @article.title %></p>
+
+<p><strong>Content:</strong></p>
+
+<p><%= @article.content %></p>
+
+<hr>
+
+<% @article.comments.each do |c| %>
+	<p><strong><%= c.commenter %> wrote: </strong></p>
+	<p><%= c.comment %></p>
+	<p> <%= link_to("Edit", edit_article_comment_path(@article.id, c.id)) %> | <%= link_to("Delete", [c.article, c], :method => :delete, :data => {:confirm => "Positive?"}) %> </p>
+<% end %>
+
+<hr>
+<h2>Add a comment: </h2>
+<%= form_for([@article, @article.comments.build]) do |form| %>
+	
+	<p><strong>Commenter:</strong></p>
+	
+	<p><%= form.text_area(:commenter, :cols => 80, :rows => 1) %></p>
+	
+	<p><strong>Comment:</strong></p>
+	
+	<p><%= form.text_area(:comment, :cols => 80, :rows => 10) %></p>
+
+	<p><%= form.submit("Submit Comment") %></p>
+
+<% end %>
+
+<hr>

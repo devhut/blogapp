@@ -1,0 +1,29 @@
+<h1>Index</h1>
+
+<hr>
+
+<p><%= link_to("Add a new article", new_article_path) %></p>
+
+<% @all_articles.each do |art| %>
+
+	<hr>
+
+	<p><strong>Author:</strong></p>
+
+	<p><%= art.author %></p>
+
+	<p><strong>Title:</strong></p>
+
+	<p><%= art.title %></p>
+
+	<p><strong>Content:</strong></p>
+
+	<p><%= art.content %></p>
+
+	<p>
+		<%= link_to("View Article", article_path(art.id)) %> |
+		<%= link_to("Edit", edit_article_path(art.id)) %> |
+		<%= link_to("Delete", delete_article_path(art.id)) %>
+	</p>
+
+<% end %>

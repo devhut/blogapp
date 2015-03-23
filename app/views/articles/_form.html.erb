@@ -1,0 +1,17 @@
+<%= form_for(@article) do |form| %>
+
+	<p><strong>Author:</strong></p>
+	
+	<p><%= form.text_area(:author, :cols => 80, :rows => 1) %></p>
+	
+	<p><strong>Title:</strong></p>
+	
+	<p><%= form.text_area(:title, :cols => 80, :rows => 1) %></p>
+	
+	<p><strong>Content:</strong></p>
+	
+	<p><%= form.text_area(:content, :cols => 80, :rows => 10) %></p>
+
+	<p><%= form.submit("Submit") %></p>
+
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Edit Comment</h1>
+<%= form_for([@article, @comment]) do |form| %>
+	
+	<p><strong>Commenter:</strong></p>
+	
+	<p><%= form.text_area(:commenter, :cols => 80, :rows => 1) %></p>
+	
+	<p><strong>Comment:</strong></p>
+	
+	<p><%= form.text_area(:comment, :cols => 80, :rows => 10) %></p>
+
+	<p><%= form.submit("Submit Comment") %></p>
+
+<% end %>

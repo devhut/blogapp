@@ -1,0 +1,22 @@
+<h1>Delete Article</h1>
+
+<hr>
+<p><strong>Author:</strong></p>
+
+<p><%= @delete_article.author %></p>
+
+<p><strong>Title:</strong></p>
+
+<p><%= @delete_article.title %></p>
+
+<p><strong>Content:</strong></p>
+
+<p><%= @delete_article.content %></p>
+
+<hr>
+
+<p>
+	<%= link_to("Index", articles_path) %> |
+	<%= link_to("Edit", edit_article_path) %> |
+	<%= link_to("Delete", @delete_article, :method => :delete, :data => {:confirm => "Are you sure?"}) %>
+</p>

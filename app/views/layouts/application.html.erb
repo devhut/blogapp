@@ -12,15 +12,11 @@
 
 <p><%= @time %></p>
 
-<h1>Before yield</h1>
-
 <% if !flash[:notice].blank? %>
 <h1><%= flash[:notice] %></h1>
 <% end %>
 
 <%= yield %>
-
-<h1>After yield</h1>
 
 </body>
 </html>
